@@ -12,5 +12,25 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map((tutorial) => {
+    // tutorial is a copy of the tutorials array. tutorial is a callback arrow function
+    const tut = tutorial.split(" ");
+    // .split(' ') will split the items in the array with a space (' ')
+    const capTut = tut.map(
+      (tut) =>
+        tut
+          .charAt(0)
+          // capTut will make a copy of the tut array, that is already split buy (' ')
+          .toUpperCase() + tut.slice(1)
+    );
+    const resp = capTut.join(" ");
+    return resp;
+  });
+};
+
+console.log(titleCased());
+
+
+// const titleCased = () => {
+//   return tutorials
+// }
